@@ -12,12 +12,29 @@ function App() {
   const [playerMove, setPlayerMove] = useState<Move | null>(null);
 
   return (
-    <div className="App">
+    <div className="min-h-screen flex flex-col items-center justify-center space-y-4">
       <div>Computer Move: {computerMove}</div>
       <div>Player Move: {playerMove ?? "awaiting player move"} </div>
-      <button onClick={() => setPlayerMove("rock")}>Rock</button>
-      <button onClick={() => setPlayerMove("paper")}>Paper</button>
-      <button onClick={() => setPlayerMove("scissors")}>Rock</button>
+      <div className="flex space-x-2">
+        <button
+          className="px-4 py-2 border rounded"
+          onClick={() => setPlayerMove("rock")}
+        >
+          Rock
+        </button>
+        <button
+          className="px-4 py-2 border rounded"
+          onClick={() => setPlayerMove("paper")}
+        >
+          Paper
+        </button>
+        <button
+          className="px-4 py-2 border rounded"
+          onClick={() => setPlayerMove("scissors")}
+        >
+          Scissors
+        </button>
+      </div>
     </div>
   );
 }
