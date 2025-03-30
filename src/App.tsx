@@ -1,11 +1,9 @@
 import { useState } from "react";
-import { Move } from "./types/Move";
+import { Move, MOVES } from "./types/Move";
 import { getRandomMove } from "./utils/game";
 import "./App.css";
 
 function App() {
-  const MOVES: readonly Move[] = ["rock", "paper", "scissors"];
-
   const [computerMove, setComputerMove] = useState<Move>(() =>
     getRandomMove(MOVES)
   );
