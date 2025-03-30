@@ -10,12 +10,23 @@ function App() {
   );
   const [playerMove, setPlayerMove] = useState<Move | null>(null);
 
+  const resetGame = () => {
+    setPlayerMove(null);
+    setComputerMove(getRandomMove(MOVES));
+  };
+
   return (
     <div className="min-h-screen flex flex-col items-center justify-center space-y-4">
       {playerMove && <div>Computer Move: {computerMove}</div>}
       <div>Player Move: {playerMove ?? "awaiting player move"} </div>
 
-      {playerMove ?? (
+      {playerMove ? (
+        <div>
+          <Button className="px-4 py-2 border rounded" onClick={resetGame}>
+            New Game
+          </Button>
+        </div>
+      ) : (
         <div className="flex space-x-2">
           <Button
             className="px-4 py-2 border rounded"
