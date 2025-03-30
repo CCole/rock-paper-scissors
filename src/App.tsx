@@ -12,7 +12,7 @@ function App() {
 
   return (
     <div className="min-h-screen flex flex-col items-center justify-center space-y-4">
-      <div>Computer Move: {computerMove}</div>
+      {playerMove && <div>Computer Move: {computerMove}</div>}
       <div>Player Move: {playerMove ?? "awaiting player move"} </div>
 
       {playerMove ?? (
