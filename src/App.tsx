@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Move, MOVES } from "./types/Move";
 import { getRandomMove } from "./utils/game";
+import Button from "./components/Button";
 import "./App.css";
 
 function App() {
@@ -14,24 +15,24 @@ function App() {
       <div>Computer Move: {computerMove}</div>
       <div>Player Move: {playerMove ?? "awaiting player move"} </div>
       <div className="flex space-x-2">
-        <button
+        <Button
           className="px-4 py-2 border rounded"
           onClick={() => setPlayerMove("rock")}
         >
           Rock
-        </button>
-        <button
+        </Button>
+        <Button
           className="px-4 py-2 border rounded"
           onClick={() => setPlayerMove("paper")}
         >
           Paper
-        </button>
-        <button
+        </Button>
+        <Button
           className="px-4 py-2 border rounded"
           onClick={() => setPlayerMove("scissors")}
         >
           Scissors
-        </button>
+        </Button>
       </div>
     </div>
   );
