@@ -1,7 +1,7 @@
 import { Move, MOVES } from "../types/Move";
 import { MessageKeys } from "../types/Message";
 
-export function getRandomMove(moves: readonly Move[]): Move {
+export function getRandomElement(moves: readonly Move[]): Move {
   const randomIndex = Math.floor(Math.random() * moves.length);
   return moves[randomIndex];
 }

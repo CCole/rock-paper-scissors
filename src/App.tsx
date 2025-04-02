@@ -1,19 +1,19 @@
 import { useState } from "react";
 import { Move, MOVES } from "./types/Move";
-import { getRandomMove, declareWinner } from "./utils/game";
+import { getRandomElement, declareWinner } from "./utils/game";
 import Button from "./components/Button";
 import { Messages } from "./types/Message";
 import "./App.css";
 
 function App() {
   const [computerMove, setComputerMove] = useState<Move>(() =>
-    getRandomMove(MOVES)
+    getRandomElement(MOVES)
   );
   const [playerMove, setPlayerMove] = useState<Move | null>(null);
 
   const resetGame = () => {
     setPlayerMove(null);
-    setComputerMove(getRandomMove(MOVES));
+    setComputerMove(getRandomElement(MOVES));
   };
 
   return (
